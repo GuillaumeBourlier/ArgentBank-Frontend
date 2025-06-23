@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './assets/pages/HomePage.jsx';
-import NavBar from './assets/components/NavBar.jsx';
-import Footer from './assets/components/Footer.jsx';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage.jsx";
+import NavBar from "./components/NavBar.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
