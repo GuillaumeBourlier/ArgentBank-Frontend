@@ -19,6 +19,10 @@ body {
 
 .bg-dark {
   background-color: #12002b;
+  height: 83vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sr-only {
@@ -70,8 +74,12 @@ body {
   width: 200px;
 }
 
+.icon-left {
+  margin-right: 5px;
+}
+
 .hero {
-  background-image: url('../img/bank-tree.jpeg');
+  background-image: url("../img/bank-tree.jpeg");
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -175,7 +183,7 @@ body {
 }
 
 .sign-in-icon {
-  font-size: 5rem;
+  font-size: 1rem;
 }
 
 .input-remember {
