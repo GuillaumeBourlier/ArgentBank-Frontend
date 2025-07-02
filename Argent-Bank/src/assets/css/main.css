@@ -19,10 +19,13 @@ body {
 
 .bg-dark {
   background-color: #12002b;
-  height: 83vh;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;      
+  align-items: center;        
+  justify-content: flex-start; 
 }
 
 .sr-only {
@@ -267,9 +270,74 @@ body {
   padding: 10px;
 }
 
+.bg-dark {
+  background-color: #12002b;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.user-content {
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+/* Centrer le bloc d'édition */
+.edit-user-info {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  max-width: 300px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: black;
+  text-align: left;
+}
+
+.edit-user-info h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.edit-user-info label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.edit-user-info input {
+  width: 100%;
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-user-info input[readonly] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-buttons button {
+  background-color: #00bc77;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .header {
   color: #fff;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .transaction-button {
