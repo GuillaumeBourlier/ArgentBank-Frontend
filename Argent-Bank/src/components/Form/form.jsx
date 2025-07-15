@@ -49,6 +49,7 @@ const Form = () => {
       }
     } catch (error) {
       setErrorMessage("Invalid username or password. Please try again.");
+      console.error("Login error:", error);
     }
   };
 
