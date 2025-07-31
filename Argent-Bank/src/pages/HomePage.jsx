@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero/Hero.jsx";
 import Features from "../features/Features.jsx";
+
 const HomePage = () => {
   return (
     <main>

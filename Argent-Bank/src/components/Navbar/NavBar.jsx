@@ -3,16 +3,16 @@ import logo from "../../assets/img/argentBankLogo.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/authSlice";
 
-const Navbar = () => {
-  const token = useSelector((state) => state.auth.token);
-  const userName = useSelector((state) => state.auth.userName);
-  const firstName = useSelector((state) => state.auth.firstName);
-  const navigate = useNavigate();
+const Navbar = () => { 
+  const token = useSelector((state) => state.auth.token); 
+  const userName = useSelector((state) => state.auth.userName); 
+  const firstName = useSelector((state) => state.auth.firstName); 
+  const navigate = useNavigate(); 
   const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate("/");
+  const handleLogout = () => { 
+    dispatch(logout()); 
+    navigate("/"); 
   };
 
   return (

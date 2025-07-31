@@ -3,9 +3,9 @@ import DocumentTitle from "../components/DocumentTitle";
 import Account from "../components/Account/AccountList"
 import UserHeader from "../UserHeader/userHeader"
 
-export default function User() {
-  const user = useSelector((state) => state.auth) || {};
-  const title = `${user.firstName || "[Prénom]"} ${user.lastName || "[Nom]"}`;
+export default function User() { // fonction utilisée pour la page utilisateur
+  const user = useSelector((state) => state.auth) || {}; // Récupération des données utilisateur dans le store Redux (authSlice)
+  const title = `${user.firstName || "[Prénom]"} ${user.lastName || "[Nom]"}`; 
 
   return (
     <>

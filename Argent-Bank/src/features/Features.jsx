@@ -1,4 +1,3 @@
-import React from 'react';
 import FeatureItem from './FeatureItem';
 import iconChat from '../assets/img/icon-chat.webp';
 import iconMoney from '../assets/img/icon-money.webp';

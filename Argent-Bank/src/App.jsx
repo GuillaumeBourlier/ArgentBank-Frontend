@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import NavBar from "./components/Navbar/NavBar.jsx";
@@ -7,6 +6,8 @@ import SignInPage from "./pages/SignInPage";
 import UserPage from "./pages/UserPage";
 import Error from "./pages/Error.jsx";
 import SecurePage from "./components/SecureRoute/SecureRoute.jsx";
+
+
 function App() {
   return (
     <Router>
