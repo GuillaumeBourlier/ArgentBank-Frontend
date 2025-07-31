@@ -10,7 +10,7 @@ import SecurePage from "./components/SecureRoute/SecureRoute.jsx";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ArgentBank-Frontend">
       <div className="App">
         <NavBar />
         <Routes>
