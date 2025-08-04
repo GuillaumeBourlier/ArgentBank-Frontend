@@ -4,33 +4,33 @@ import { setUserName } from "../store/authSlice";
 import { changeUsername } from "../services/userServices";
 
 const UserHeader = () => {
-  const dispatch = useDispatch(); //Initialisation de dispatch pour envoyer des actions Redux
-  const user = useSelector((state) => state.auth) || {}; // Récupération des données utilisateur dans le store Redux (authSlice)
-  const [newUsername, setnewUsername] = useState(); // État local pour stocker la nouvelle valeur du nom d’utilisateur en cours d’édition
-  const [isEditing, setIsEditing] = useState(false); // État local pour savoir si on est en mode édition (true) ou non (false)
+  const dispatch = useDispatch(); 
+  const user = useSelector((state) => state.auth) || {}; 
+  const [newUsername, setnewUsername] = useState(); 
+  const [isEditing, setIsEditing] = useState(false); 
 
-  const handleEditing = () => { // Active le mode édition
+  const handleEditing = () => { 
     setnewUsername(user.userName);
     setIsEditing(true);
   };
 
-  const handleInputChange = (e) => { // Met à jour l’état local avec la nouvelle valeur du nom d’utilisateur
+  const handleInputChange = (e) => { 
     setnewUsername(e.target.value);
   };
 
-  const handleSaveNewUsername = async () => { // Enregistre la nouvelle valeur du nom d’utilisateur
+  const handleSaveNewUsername = async () => { 
     if (newUsername.trim().length < 2) { 
       return;
     }
     try {
-      dispatch(setUserName({ ...user, userName: newUsername })); // Met à jour le nom d’utilisateur dans le store Redux
+      dispatch(setUserName({ ...user, userName: newUsername })); 
       setIsEditing(false); 
 
-      const payload = { // Mise à jour du nom
+      const payload = { 
         userName: newUsername,
       };
 
-      await changeUsername(payload, user.token); // Envoie la nouvelle valeur à l’API avec le token utilisateur
+      await changeUsername(payload, user.token); 
     } catch (error) {
       console.error("Failed to change username:", error);
     }

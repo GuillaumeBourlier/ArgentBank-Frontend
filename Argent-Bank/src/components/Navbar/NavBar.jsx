@@ -3,16 +3,16 @@ import logo from "../../assets/img/argentBankLogo.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/authSlice";
 
-const Navbar = () => { 
-  const token = useSelector((state) => state.auth.token); 
-  const userName = useSelector((state) => state.auth.userName); 
-  const firstName = useSelector((state) => state.auth.firstName); 
-  const navigate = useNavigate(); 
+const Navbar = () => {
+  const token = useSelector((state) => state.auth.token);
+  const userName = useSelector((state) => state.auth.userName);
+  const firstName = useSelector((state) => state.auth.firstName);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleLogout = () => { 
-    dispatch(logout()); 
-    navigate("/"); 
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
   };
 
   return (
@@ -33,10 +33,10 @@ const Navbar = () => {
                 <i className="fa fa-user-circle icon-left"></i>
                 {userName || firstName}
               </Link>
-              <button className="main-nav-item" onClick={handleLogout} style={{ background: "none", border: "none", cursor: "pointer" }}>
+              <Link className="main-nav-item" to="/" onClick={handleLogout}>
                 <i className="fa fa-sign-out"></i>
                 Sign out
-              </button>
+              </Link>
             </>
           ) : (
             <Link className="main-nav-item" to="/login">

@@ -5,12 +5,12 @@ import { login, setUser } from "../../store/authSlice";
 import { userLogin, fetchUser } from "../../services/userServices";
 
 const Form = () => {
-  const form = useRef(); // Permet de référencer le formulaire dans le DOM
-  const navigate = useNavigate(); // Hook pour naviguer vers d'autres pages
-  const dispatch = useDispatch(); // Initialisation de dispatch pour envoyer des actions Redux
+  const form = useRef(); 
+  const navigate = useNavigate(); 
+  const dispatch = useDispatch(); 
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (e) => { // Gère la soumission du formulaire
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     const userInfos = {
       email: form.current[0].value, 
@@ -20,13 +20,13 @@ const Form = () => {
     const payload = JSON.stringify(userInfos);
 
     try {
-      const data = await userLogin(payload); // Envoie les informations de connexion à l'API
+      const data = await userLogin(payload); 
       if (data.body.token) { 
-        dispatch(login({ token: data.body.token })); // Envoi le token redux
+        dispatch(login({ token: data.body.token })); 
 
-        const userData = await fetchUser(data.body.token); // Récupère les données utilisateur avec le token
+        const userData = await fetchUser(data.body.token); 
         dispatch( 
-          setUser({ // Action pour stocker les informations utilisateur
+          setUser({ 
             id: userData.id,
             email: userData.email,
             userName: userData.userName,
@@ -43,7 +43,7 @@ const Form = () => {
           localStorage.removeItem("token");
         }
 
-        navigate("/profile"); // Redirige vers la page de profil après la connexion réussie
+        navigate("/profile"); 
       } else {
         console.error("Token not found in response:", data);
       }
